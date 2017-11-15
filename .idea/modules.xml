@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transcriber.iml" filepath="$PROJECT_DIR$/.idea/modules/transcriber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transcriber_main.iml" filepath="$PROJECT_DIR$/.idea/modules/transcriber_main.iml" group="transcriber" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transcriber_test.iml" filepath="$PROJECT_DIR$/.idea/modules/transcriber_test.iml" group="transcriber" />
+    </modules>
+  </component>
+</project>

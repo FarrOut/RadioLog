@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <!--Path to log directory-->
+    <property name="PATH" value="D:\Workspace\Source\Radio Log\transcriber\out\test\logs\"/>
+
+    <appender name="transcriptions" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${PATH}/events/transcriptions.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${PATH}/events/transcriptions.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>200</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level %class{36}.%M %L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="general" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${PATH}/events/general.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${PATH}/events/general.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>200</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level %class{36}.%M %L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--Loggers-->
+    <logger name="transcriptions" level="trace" class="com.dvsoft.radio" additivity="false">
+        <appender-ref ref="transcriptions"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="general"/>
+    </root>
+</configuration>
